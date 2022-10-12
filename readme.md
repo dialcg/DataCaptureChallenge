@@ -1,7 +1,7 @@
 
 # DataCapture
 
-A piece of software that let's you process simple numbers.
+A piece of software that let you process simple numbers.
 
 ## Data operations
 
@@ -26,6 +26,14 @@ i.e:
 ```bash
   python3 processor.py --collection 10 11 12 13
 ```
+
+Or you can just run 
+
+```bash
+  python3 processor.py
+```
+
+To use a default collection [3, 9, 3, 4, 6]
 
 Then, you will be prompted with the requiered values:
 

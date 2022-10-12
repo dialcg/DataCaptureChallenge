@@ -21,19 +21,15 @@ class StatsObject:
     def less(self, number: int) -> int:
         return self._gt_lt_dispatcher('less', number)
     
-    def _gt_lt_dispatcher(self, op: str, number: int) -> int:
-        if op in ('greater'):
-            comp = operator.gt
-        elif op in ('less'):
-            comp = operator.lt
-        else:
-            raise Exception("Invalid operation")
-
+    def _gt_lt_dispatcher(self, input_op: str, number: int) -> int:
+        operator_dispatcher = lambda input_op: operator.gt if input_op == 'greater' else operator.lt
+        selected_operator = operator_dispatcher(input_op)
+        
         result = 0
 
         for counter in range(self.LIMIT): 
             try:
-                if comp(self.stats_items[counter], number):
+                if selected_operator(self.stats_items[counter], number):
                     result += 1
             except IndexError:
                 break
