@@ -22,8 +22,7 @@ class StatsObject:
         return self._gt_lt_dispatcher('less', number)
     
     def _gt_lt_dispatcher(self, input_op: str, number: int) -> int:
-        operator_dispatcher = lambda input_op: operator.gt if input_op == 'greater' else operator.lt
-        selected_operator = operator_dispatcher(input_op)
+        selected_operator = operator.gt if input_op == 'greater' else operator.lt
         
         result = 0
 
